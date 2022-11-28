@@ -8,8 +8,10 @@ public class CrashDetector : MonoBehaviour
     [SerializeField] float levelLoad = 1f;
     [SerializeField] ParticleSystem crashParticle;
     [SerializeField] AudioClip crasSFX;
+    bool gotHit;
     void OnTriggerEnter2D(Collider2D other) {
-          if(other.tag == "object"){
+          if(other.tag == "object" && !gotHit){
+            gotHit = true;
             FindObjectOfType<PlayerController>().DisableControls();
             crashParticle.Play();
             GetComponent<AudioSource>().PlayOneShot(crasSFX);

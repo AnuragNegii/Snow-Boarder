@@ -11746,7 +11746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d98b747114765040a2bf49a4be0aa2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelLoad: 0.5
+  levelLoad: 3
   crashParticle: {fileID: 247331027}
   crasSFX: {fileID: 8300000, guid: 47035b5e03211e048b980cc084d22b3a, type: 3}
 --- !u!114 &1168779052
