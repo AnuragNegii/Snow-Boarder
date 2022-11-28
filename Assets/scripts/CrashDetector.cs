@@ -8,14 +8,15 @@ public class CrashDetector : MonoBehaviour
     [SerializeField] float levelLoad = 1f;
     [SerializeField] ParticleSystem crashParticle;
     [SerializeField] AudioClip crasSFX;
-    private void OnTriggerEnter2D(Collider2D other) {
+    void OnTriggerEnter2D(Collider2D other) {
           if(other.tag == "object"){
+            FindObjectOfType<PlayerController>().DisableControls();
             crashParticle.Play();
             GetComponent<AudioSource>().PlayOneShot(crasSFX);
             Invoke("ReloadScene", levelLoad);
         }
     }
-    private void ReloadScene(){
+    void ReloadScene(){
         SceneManager.LoadScene(0);
     }
 }
